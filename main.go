@@ -1,72 +1,115 @@
 package main
 
 import (
-	"bytes"
-	"crypto/sha256"
+	"flag"
 	"fmt"
+	"log"
+	"os"
+	"runtime"
 	"strconv"
+
+	"github.com/dtlark/blockchain/blockchain"
 )
 
-type Blockchain struct {
-	blocks []*Block //When importing a package you can access only its exported identifiers. An identifier is exported if it begins with a capital letter.
+type CommandLine struct {
+	blockchain *blockchain.BlockChain
 }
 
-type Block struct {
-	Hash     []byte
-	Data     []byte
-	PrevHash []byte
-	Nonce    int
+func (cli *CommandLine) printUsage() {
+	fmt.Println("Usage:")
+	fmt.Println(" add -block BLOCK_DATA - add a block to the chain")
+	fmt.Println(" print - Prints the blocks in the chain")
 }
 
-func (b *Block) DeriveHash() {
-	info := bytes.Join([][]byte{b.Data, b.PrevHash}, []byte{})
-	hash := sha256.Sum256(info)
-	b.Hash = hash[:]
+func (cli *CommandLine) validateArgs() {
+	if len(os.Args) < 2 {
+		cli.printUsage()
+		runtime.Goexit()
+	}
 }
 
-func CreateBlock(data string, prevHash []byte) *Block {
-	block := &Block{[]byte{}, []byte(data), prevHash, 0}
-	//block.DeriveHash()
-	pow := NewProof(block)
-	nonce, hash := pow.Run()
-
-	block.Hash = hash[:]
-	block.Nonce = nonce
-
-	return block
+func (cli *CommandLine) addBlock(data string) {
+	cli.blockchain.AddBlock(data)
+	fmt.Println("Added Block!")
 }
 
-func (chain *Blockchain) AddBlock(data string) {
-	prevBlock := chain.blocks[len(chain.blocks)-1]
-	new := CreateBlock(data, prevBlock.Hash)
-	chain.blocks = append(chain.blocks, new)
-}
+func (cli *CommandLine) printChain() {
+	iter := cli.blockchain.Iterator()
 
-func GenesisBlock() *Block {
-	return CreateBlock("In the beginning...", []byte{})
-}
+	for {
+		block := iter.Next()
 
-func CreateBlockchain() *Blockchain {
-	return &Blockchain{[]*Block{GenesisBlock()}}
-}
-
-func main() {
-	chain := CreateBlockchain()
-
-	chain.AddBlock("Block 1")
-	chain.AddBlock("Block 2")
-	chain.AddBlock("Block 3")
-
-	for _, block := range chain.blocks {
-		fmt.Printf("Prev hash: %x\n", block.PrevHash) //hexadecimal notation (with decimal power of two exponent) (interpreted)
+		fmt.Printf("Prev. hash: %x\n", block.PrevHash)
 		fmt.Printf("Data: %s\n", block.Data)
 		fmt.Printf("Hash: %x\n", block.Hash)
-		fmt.Println()
-
-		pow := NewProof(block)
+		pow := blockchain.NewProof(block)
 		fmt.Printf("PoW: %s\n", strconv.FormatBool(pow.Validate()))
 		fmt.Println()
 
+		if len(block.PrevHash) == 0 {
+			break
+		}
+	}
+}
+
+func (cli *CommandLine) printC() {
+	iter := cli.blockchain.Db.NewIterator(nil, nil)
+	for iter.Next() {
+
+		key := iter.Key()
+		value := iter.Value()
+
+		fmt.Println(key)
+		fmt.Println(value)
+
+	}
+	iter.Release()
+	//err = iter.Error()
+}
+
+func (cli *CommandLine) run() {
+	cli.validateArgs()
+
+	addBlockCmd := flag.NewFlagSet("add", flag.ExitOnError)
+	printChainCmd := flag.NewFlagSet("print", flag.ExitOnError)
+	addBlockData := addBlockCmd.String("block", "", "Block data")
+
+	switch os.Args[1] {
+	case "add":
+		err := addBlockCmd.Parse(os.Args[2:])
+		if err != nil {
+			log.Panic(err)
+		}
+
+	case "print":
+		err := printChainCmd.Parse(os.Args[2:])
+		if err != nil {
+			log.Panic(err)
+		}
+
+	default:
+		cli.printUsage()
+		runtime.Goexit()
 	}
 
+	if addBlockCmd.Parsed() {
+		if *addBlockData == "" {
+			addBlockCmd.Usage()
+			runtime.Goexit()
+		}
+		cli.addBlock(*addBlockData)
+	}
+
+	if printChainCmd.Parsed() {
+		cli.printChain()
+	}
+}
+
+func main() {
+	defer os.Exit(0)
+	chain := blockchain.InitBlockChain()
+	defer chain.Db.Close()
+
+	cli := CommandLine{chain}
+	cli.run()
 }
