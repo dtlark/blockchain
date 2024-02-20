@@ -1,4 +1,4 @@
-# Install script for directory: /home/larkdt/2/blockchain/blockchain
+# Install script for directory: /home/larkdt/finalbc/blockchain
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -50,5 +50,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/larkdt/2/blockchain/blockchain/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/larkdt/finalbc/blockchain/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")
