@@ -93,6 +93,7 @@ blockchain_EXTERNAL_OBJECTS =
 blockchain: CMakeFiles/blockchain.dir/main.cpp.o
 blockchain: CMakeFiles/blockchain.dir/build.make
 blockchain: /usr/lib/x86_64-linux-gnu/libsodium.so
+blockchain: /usr/lib/x86_64-linux-gnu/libleveldb.so
 blockchain: CMakeFiles/blockchain.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/larkdt/finalbc/blockchain/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable blockchain"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/blockchain.dir/link.txt --verbose=$(VERBOSE)

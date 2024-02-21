@@ -5,6 +5,7 @@
 #include <iomanip>
 #include <algorithm>
 #include <sodium.h>
+#include <leveldb/db.h>
 #include "transaction.h"
 #include "hash.h"
 
@@ -81,9 +82,14 @@ public:
 };
 
 class Block {
-    BlockHeader blockHeader;
-    std::array<unsigned char, 32> blockHeaderHash_;
-    uint32_t blockSize;
-    uint32_t txCount;
-    vector<Transaction> transactions;
+    BlockHeader blockHeader_;
+    uint32_t blockSize_;
+    uint32_t txCount_;
+    vector<Transaction> transactions_;
+
+public:
+
+    BlockHeader getBlockHeader() const {
+        return blockHeader_;
+    }
 };

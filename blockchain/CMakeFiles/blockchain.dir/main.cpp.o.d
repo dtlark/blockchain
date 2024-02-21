@@ -247,8 +247,12 @@ CMakeFiles/blockchain.dir/main.cpp.o: \
  /usr/include/sodium/crypto_pwhash_scryptsalsa208sha256.h \
  /usr/include/sodium/crypto_stream_salsa2012.h \
  /usr/include/sodium/crypto_stream_salsa208.h \
- /usr/include/sodium/crypto_stream_xchacha20.h \
+ /usr/include/sodium/crypto_stream_xchacha20.h /usr/include/leveldb/db.h \
+ /usr/include/leveldb/export.h /usr/include/leveldb/iterator.h \
+ /usr/include/leveldb/slice.h /usr/include/c++/11/cassert \
+ /usr/include/assert.h /usr/include/c++/11/cstddef \
+ /usr/include/c++/11/cstring /usr/include/string.h /usr/include/strings.h \
+ /usr/include/leveldb/status.h /usr/include/leveldb/options.h \
  /home/larkdt/finalbc/blockchain/src/transaction.h \
  /home/larkdt/finalbc/blockchain/src/hash.h /usr/include/c++/11/sstream \
- /usr/include/c++/11/bits/sstream.tcc /usr/include/c++/11/cstring \
- /usr/include/string.h /usr/include/strings.h
+ /usr/include/c++/11/bits/sstream.tcc

@@ -6,9 +6,12 @@ option(DEBUG "Enable debugging" ON)
 set(CMAKE_CXX_STANDARD 11)
 
 set(SODIUM_INCLUDE_DIR "/usr/include/sodium")
-set(SODIUM_LIBRARY_RELEASE "/usr/lib/x86_64-linux-gnu/libsodium.so")
+set(SODIUM_LIBRARY "/usr/lib/x86_64-linux-gnu/libsodium.so")
+
+set(LEVELDB_INCLUDE_DIR "/usr/include/leveldb")
+set(LEVELDB_LIBRARY "/usr/lib/x86_64-linux-gnu/libleveldb.so")
 
 add_executable(blockchain main.cpp)
 
-target_include_directories(blockchain PRIVATE ${SODIUM_INCLUDE_DIR})
-target_link_libraries(blockchain PRIVATE ${SODIUM_LIBRARY_RELEASE})
+target_include_directories(blockchain PRIVATE ${SODIUM_INCLUDE_DIR} ${LEVELDB_INCLUDE_DIR})
+target_link_libraries(blockchain PRIVATE ${SODIUM_LIBRARY} ${LEVELDB_LIBRARY})
