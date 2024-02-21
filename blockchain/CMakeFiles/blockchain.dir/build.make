@@ -83,19 +83,67 @@ CMakeFiles/blockchain.dir/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/blockchain.dir/main.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/larkdt/finalbc/blockchain/main.cpp -o CMakeFiles/blockchain.dir/main.cpp.s
 
+CMakeFiles/blockchain.dir/src/block.cpp.o: CMakeFiles/blockchain.dir/flags.make
+CMakeFiles/blockchain.dir/src/block.cpp.o: src/block.cpp
+CMakeFiles/blockchain.dir/src/block.cpp.o: CMakeFiles/blockchain.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/larkdt/finalbc/blockchain/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/blockchain.dir/src/block.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/blockchain.dir/src/block.cpp.o -MF CMakeFiles/blockchain.dir/src/block.cpp.o.d -o CMakeFiles/blockchain.dir/src/block.cpp.o -c /home/larkdt/finalbc/blockchain/src/block.cpp
+
+CMakeFiles/blockchain.dir/src/block.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/blockchain.dir/src/block.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/larkdt/finalbc/blockchain/src/block.cpp > CMakeFiles/blockchain.dir/src/block.cpp.i
+
+CMakeFiles/blockchain.dir/src/block.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/blockchain.dir/src/block.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/larkdt/finalbc/blockchain/src/block.cpp -o CMakeFiles/blockchain.dir/src/block.cpp.s
+
+CMakeFiles/blockchain.dir/src/blockchain.cpp.o: CMakeFiles/blockchain.dir/flags.make
+CMakeFiles/blockchain.dir/src/blockchain.cpp.o: src/blockchain.cpp
+CMakeFiles/blockchain.dir/src/blockchain.cpp.o: CMakeFiles/blockchain.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/larkdt/finalbc/blockchain/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/blockchain.dir/src/blockchain.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/blockchain.dir/src/blockchain.cpp.o -MF CMakeFiles/blockchain.dir/src/blockchain.cpp.o.d -o CMakeFiles/blockchain.dir/src/blockchain.cpp.o -c /home/larkdt/finalbc/blockchain/src/blockchain.cpp
+
+CMakeFiles/blockchain.dir/src/blockchain.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/blockchain.dir/src/blockchain.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/larkdt/finalbc/blockchain/src/blockchain.cpp > CMakeFiles/blockchain.dir/src/blockchain.cpp.i
+
+CMakeFiles/blockchain.dir/src/blockchain.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/blockchain.dir/src/blockchain.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/larkdt/finalbc/blockchain/src/blockchain.cpp -o CMakeFiles/blockchain.dir/src/blockchain.cpp.s
+
+CMakeFiles/blockchain.dir/src/transaction.cpp.o: CMakeFiles/blockchain.dir/flags.make
+CMakeFiles/blockchain.dir/src/transaction.cpp.o: src/transaction.cpp
+CMakeFiles/blockchain.dir/src/transaction.cpp.o: CMakeFiles/blockchain.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/larkdt/finalbc/blockchain/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/blockchain.dir/src/transaction.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/blockchain.dir/src/transaction.cpp.o -MF CMakeFiles/blockchain.dir/src/transaction.cpp.o.d -o CMakeFiles/blockchain.dir/src/transaction.cpp.o -c /home/larkdt/finalbc/blockchain/src/transaction.cpp
+
+CMakeFiles/blockchain.dir/src/transaction.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/blockchain.dir/src/transaction.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/larkdt/finalbc/blockchain/src/transaction.cpp > CMakeFiles/blockchain.dir/src/transaction.cpp.i
+
+CMakeFiles/blockchain.dir/src/transaction.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/blockchain.dir/src/transaction.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/larkdt/finalbc/blockchain/src/transaction.cpp -o CMakeFiles/blockchain.dir/src/transaction.cpp.s
+
 # Object files for target blockchain
 blockchain_OBJECTS = \
-"CMakeFiles/blockchain.dir/main.cpp.o"
+"CMakeFiles/blockchain.dir/main.cpp.o" \
+"CMakeFiles/blockchain.dir/src/block.cpp.o" \
+"CMakeFiles/blockchain.dir/src/blockchain.cpp.o" \
+"CMakeFiles/blockchain.dir/src/transaction.cpp.o"
 
 # External object files for target blockchain
 blockchain_EXTERNAL_OBJECTS =
 
 blockchain: CMakeFiles/blockchain.dir/main.cpp.o
+blockchain: CMakeFiles/blockchain.dir/src/block.cpp.o
+blockchain: CMakeFiles/blockchain.dir/src/blockchain.cpp.o
+blockchain: CMakeFiles/blockchain.dir/src/transaction.cpp.o
 blockchain: CMakeFiles/blockchain.dir/build.make
 blockchain: /usr/lib/x86_64-linux-gnu/libsodium.so
 blockchain: /usr/lib/x86_64-linux-gnu/libleveldb.so
 blockchain: CMakeFiles/blockchain.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/larkdt/finalbc/blockchain/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable blockchain"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/larkdt/finalbc/blockchain/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX executable blockchain"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/blockchain.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

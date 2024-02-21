@@ -1,8 +1,8 @@
 #include <iostream>
 #include <tuple>
 #include <vector>
-#include "src/blockchain.h"
-#include "src/transaction.h"
+#include "include/blockchain.h"
+#include "include/transaction.h"
 
 int main() {
     Blockchain b;

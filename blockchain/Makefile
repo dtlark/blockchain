@@ -153,6 +153,78 @@ main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/blockchain.dir/build.make CMakeFiles/blockchain.dir/main.cpp.s
 .PHONY : main.cpp.s
 
+src/block.o: src/block.cpp.o
+.PHONY : src/block.o
+
+# target to build an object file
+src/block.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/blockchain.dir/build.make CMakeFiles/blockchain.dir/src/block.cpp.o
+.PHONY : src/block.cpp.o
+
+src/block.i: src/block.cpp.i
+.PHONY : src/block.i
+
+# target to preprocess a source file
+src/block.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/blockchain.dir/build.make CMakeFiles/blockchain.dir/src/block.cpp.i
+.PHONY : src/block.cpp.i
+
+src/block.s: src/block.cpp.s
+.PHONY : src/block.s
+
+# target to generate assembly for a file
+src/block.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/blockchain.dir/build.make CMakeFiles/blockchain.dir/src/block.cpp.s
+.PHONY : src/block.cpp.s
+
+src/blockchain.o: src/blockchain.cpp.o
+.PHONY : src/blockchain.o
+
+# target to build an object file
+src/blockchain.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/blockchain.dir/build.make CMakeFiles/blockchain.dir/src/blockchain.cpp.o
+.PHONY : src/blockchain.cpp.o
+
+src/blockchain.i: src/blockchain.cpp.i
+.PHONY : src/blockchain.i
+
+# target to preprocess a source file
+src/blockchain.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/blockchain.dir/build.make CMakeFiles/blockchain.dir/src/blockchain.cpp.i
+.PHONY : src/blockchain.cpp.i
+
+src/blockchain.s: src/blockchain.cpp.s
+.PHONY : src/blockchain.s
+
+# target to generate assembly for a file
+src/blockchain.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/blockchain.dir/build.make CMakeFiles/blockchain.dir/src/blockchain.cpp.s
+.PHONY : src/blockchain.cpp.s
+
+src/transaction.o: src/transaction.cpp.o
+.PHONY : src/transaction.o
+
+# target to build an object file
+src/transaction.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/blockchain.dir/build.make CMakeFiles/blockchain.dir/src/transaction.cpp.o
+.PHONY : src/transaction.cpp.o
+
+src/transaction.i: src/transaction.cpp.i
+.PHONY : src/transaction.i
+
+# target to preprocess a source file
+src/transaction.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/blockchain.dir/build.make CMakeFiles/blockchain.dir/src/transaction.cpp.i
+.PHONY : src/transaction.cpp.i
+
+src/transaction.s: src/transaction.cpp.s
+.PHONY : src/transaction.s
+
+# target to generate assembly for a file
+src/transaction.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/blockchain.dir/build.make CMakeFiles/blockchain.dir/src/transaction.cpp.s
+.PHONY : src/transaction.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -165,6 +237,15 @@ help:
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
+	@echo "... src/block.o"
+	@echo "... src/block.i"
+	@echo "... src/block.s"
+	@echo "... src/blockchain.o"
+	@echo "... src/blockchain.i"
+	@echo "... src/blockchain.s"
+	@echo "... src/transaction.o"
+	@echo "... src/transaction.i"
+	@echo "... src/transaction.s"
 .PHONY : help
 
 

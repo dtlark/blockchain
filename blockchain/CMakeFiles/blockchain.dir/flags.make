@@ -4,7 +4,7 @@
 # compile CXX with /usr/bin/c++
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/usr/include/sodium -I/usr/include/leveldb
+CXX_INCLUDES = -I/home/larkdt/finalbc/blockchain/./include -I/usr/include/sodium -I/usr/include/leveldb
 
 CXX_FLAGS = -std=gnu++11
 

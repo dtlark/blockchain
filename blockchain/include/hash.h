@@ -1,10 +1,13 @@
 #pragma once
+
 #include <sodium.h>
 #include <string>
 #include <sstream>
 #include <iomanip>
 #include <array>
 #include <cstring>
+
+extern const char* base58Chars;
 
 template<size_t N>
 std::array<unsigned char, 32> sha256(const std::array<unsigned char, N>& data) {
@@ -37,8 +40,6 @@ std::string dataToHexString(const std::array<unsigned char, N>& data) {
     return ss.str();
 }
 
-static const char* base58Chars = "123456789ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz";
-
 std::string encodeBase58(const std::array<unsigned char, 32>& input) {
     std::string output;
     size_t zeros = 0;
@@ -64,8 +65,8 @@ std::string encodeBase58(const std::array<unsigned char, 32>& input) {
     return output;
 }
 
-std::array<unsigned char, 32> generateSeed(size_t sizeBytes = 32) {
+std::array<unsigned char, 32> generateSeed(size_t sizeBytes) {
     std::array<unsigned char, 32> seed;
-    randombytes_buf(seed.data(), seed.size());
+    randombytes_buf(seed.data(), sizeBytes);
     return seed;
 }
