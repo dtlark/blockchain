@@ -1,1 +1,0 @@
-/usr/bin/c++ CMakeFiles/blockchain.dir/main.cpp.o CMakeFiles/blockchain.dir/src/block.cpp.o CMakeFiles/blockchain.dir/src/blockchain.cpp.o CMakeFiles/blockchain.dir/src/transaction.cpp.o -o blockchain  /usr/lib/x86_64-linux-gnu/libsodium.so /usr/lib/x86_64-linux-gnu/libleveldb.so 

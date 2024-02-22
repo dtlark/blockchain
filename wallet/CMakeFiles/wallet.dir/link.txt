@@ -1,1 +1,0 @@
-/usr/bin/c++ CMakeFiles/wallet.dir/src/main.cpp.o -o wallet  /usr/lib/x86_64-linux-gnu/libsodium.so 

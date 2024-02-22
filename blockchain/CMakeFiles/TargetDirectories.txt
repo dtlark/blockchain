@@ -1,3 +1,0 @@
-/home/larkdt/finalbc/blockchain/CMakeFiles/blockchain.dir
-/home/larkdt/finalbc/blockchain/CMakeFiles/edit_cache.dir
-/home/larkdt/finalbc/blockchain/CMakeFiles/rebuild_cache.dir

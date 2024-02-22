@@ -1,3 +1,0 @@
-/home/larkdt/2/blockchain/wallet/CMakeFiles/wallet.dir
-/home/larkdt/2/blockchain/wallet/CMakeFiles/edit_cache.dir
-/home/larkdt/2/blockchain/wallet/CMakeFiles/rebuild_cache.dir
